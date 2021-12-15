@@ -18,12 +18,14 @@ const app = new Vue (
     },
     
      created: function() {
+         for(let i=0 ; i < 10; i++){
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
             .then((response) => {
-                const emailGenerated = response.data.response;
-                this.emailArray
+                const emailGenerated = response.data;
+                const email = emailGenerated.response;
+                this.emailArray.push(email);
             });
             
-        }
+        }}
     }
 );

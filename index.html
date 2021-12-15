@@ -12,9 +12,10 @@
 </head>
 <body>
     <div id="root">
-        <ul>
-            <li v-for="emailCount === 10">{{ emailGenerated}}</li>
-
+        <ul v-if="emailArray.length === 10 ">
+            <li v-for="email in emailArray">
+                {{email}}
+            </li>
         </ul>
     </div>
     <script src="js/script.js"></script>
